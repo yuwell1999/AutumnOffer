@@ -15,6 +15,7 @@ public class PreTest {
                         {1, 0, 1, 0, 0, 0, 0},
                         {1, 0, 0, 1, 0, 1, 1}};
 
+        // 坐标为左上角的点，如图中左上角第一个方格，坐标就为(0,0)，到达右上角的格子目标坐标就为(0,6)
         System.out.println(bfs(array, 0, 0, 0, 5));
     }
 
@@ -54,7 +55,7 @@ public class PreTest {
                     queue.offer(tmp2);
                     ans += 1;
                 }
-                
+
                 if (tmp[1] < array[0].length - 1 && array[tmp[0]][tmp[1] + 1] != 1 && !hs.contains(tmp2 = new int[]{tmp[0], tmp[1] + 1})) {
                     hs.add(tmp2);
                     queue.offer(tmp2);
