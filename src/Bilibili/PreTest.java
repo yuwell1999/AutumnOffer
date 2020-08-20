@@ -7,7 +7,7 @@ import java.util.Queue;
 public class PreTest {
     public static void main(String[] args) {
         // 0表示能白色方块能通过，1表示灰色方块有障碍物
-        int[][] array ={
+        int[][] array = {
                 {0, 0, 0, 1, 1, 0, 0},
                 {0, 1, 0, 1, 0, 0, 1},
                 {1, 1, 0, 1, 0, 1, 1},

@@ -1,30 +1,32 @@
 package Meituan;
 
-import java.util.*;
+import java.util.LinkedHashSet;
+import java.util.Scanner;
+import java.util.Set;
 
 public class ReverseNumbers {
-        public static void main(String [] args){
+    public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int N = s.nextInt();
         Set<int[]> set = new LinkedHashSet<>();
 
-        for(int i=1;i<=N;i++){
-            if(i==getReverse(i)*4){
+        for (int i = 1; i <= N; i++) {
+            if (i == getReverse(i) * 4) {
                 //System.out.println(i);
-                set.add(new int[]{Math.min(i,getReverse(i)),Math.max(i,getReverse(i))});
+                set.add(new int[]{Math.min(i, getReverse(i)), Math.max(i, getReverse(i))});
             }
         }
 
         System.out.println(set.size());
-        for(int[] a:set){
-            System.out.println(a[0]+" "+a[1]);
+        for (int[] a : set) {
+            System.out.println(a[0] + " " + a[1]);
         }
     }
 
-    public static int getReverse(int n){
+    public static int getReverse(int n) {
         int ans = 0;
-        while(n>0){
-            ans =ans*10+n%10;
+        while (n > 0) {
+            ans = ans * 10 + n % 10;
             n /= 10;
         }
 

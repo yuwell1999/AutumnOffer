@@ -1,6 +1,8 @@
 package Meituan;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class DiffRoutes {
     public static void main(String[] args) {
@@ -12,8 +14,8 @@ public class DiffRoutes {
         String[][] a = new String[N][2];
         for (int i = 0; i < N; i++) {
             String str = s.nextLine();
-            String []line = str.split(" ");
-            a[i][0] =line[0];
+            String[] line = str.split(" ");
+            a[i][0] = line[0];
             a[i][1] = line[1];
         }
 
@@ -25,16 +27,16 @@ public class DiffRoutes {
         int cnt = 0;
         boolean flag = false;
         for (int i = 0; i < a.length; i++) {
-            int index = find(list,a[i][1]);
-            if(index != -1){
+            int index = find(list, a[i][1]);
+            if (index != -1) {
                 ++cnt;
                 int len = list.size();
-                for(int j = index;j<len;j++){
+                for (int j = index; j < len; j++) {
                     list.remove(index);
                 }
             }
-            if(i<a.length-1){
-                list.add(a[i+1][0]);
+            if (i < a.length - 1) {
+                list.add(a[i + 1][0]);
             }
         }
 
@@ -54,9 +56,9 @@ public class DiffRoutes {
         System.out.println(cnt);
     }
 
-    static int find(List<String> list,String str){
-        for(int i=0;i<list.size();i++){
-            if(list.get(i).equals(str)){
+    static int find(List<String> list, String str) {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).equals(str)) {
                 return i;
             }
         }

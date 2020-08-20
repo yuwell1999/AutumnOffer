@@ -46,22 +46,23 @@ class WorkflowNode {
 
 public class WorkFlow {
     static int mmax = 0;
+
     public static void main(String[] args) {
         Scanner cin = new Scanner(System.in);
         while (cin.hasNext()) {
             WorkflowNode node = WorkflowNode.load(cin.next());
-            dfs(node,mmax);
+            dfs(node, mmax);
         }
 
         System.out.println(mmax);
     }
 
-    public static void dfs(WorkflowNode wfn,int cnt){
-        if (wfn==null){
-            mmax=Math.max(mmax,cnt);
+    public static void dfs(WorkflowNode wfn, int cnt) {
+        if (wfn == null) {
+            mmax = Math.max(mmax, cnt);
         }
-        for(WorkflowNode w:wfn.nextNodes){
-            dfs(w,cnt+w.timeoutMillis);
+        for (WorkflowNode w : wfn.nextNodes) {
+            dfs(w, cnt + w.timeoutMillis);
         }
     }
 }

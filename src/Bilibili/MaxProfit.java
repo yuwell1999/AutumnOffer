@@ -1,8 +1,5 @@
 package Bilibili;
 
-import java.util.*;
-
-
 public class MaxProfit {
     /**
      * 黄金投资
@@ -26,7 +23,7 @@ public class MaxProfit {
         }
 
         for (i = 1; i <= n; i++) {
-            for (j = 1; j < 6; j+=2) {
+            for (j = 1; j < 6; j += 2) {
                 f[i][j] = f[i - 1][j];
                 if (i > 1 && j > 1 && f[i - 1][j - 1] != Integer.MIN_VALUE) {
                     f[i][j] = Math.max(f[i][j], f[i - 1][j - 1] + prices[i - 1] - prices[i - 2]);
