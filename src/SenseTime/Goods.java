@@ -8,9 +8,11 @@ public class Goods {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String str = in.nextLine();
+
         List<Integer> list1 = new ArrayList<>();
         List<Integer> list2 = new ArrayList<>();
         List<Integer> list3 = new ArrayList<>();
+
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == 'G') {
                 list1.add(i);
@@ -21,7 +23,6 @@ public class Goods {
             if (str.charAt(i) == 'd') {
                 list3.add(i);
             }
-
         }
 
         int cnt = 0;
@@ -31,7 +32,6 @@ public class Goods {
             int v1 = list1.get(i);
             int v2 = list2.get(j);
             int v3 = list3.get(k);
-
 
             if (v1 < v2 && j < list2.size() - 1 && list2.get(j + 1) < v3) {
                 ++cnt;
@@ -45,10 +45,7 @@ public class Goods {
             }
         }
 
-
         System.out.println(cnt);
     }
-
-
 }
 
