@@ -14,7 +14,7 @@ public class FibbonacciSnake {
         //System.out.println(fib[fib.length-1]);
 
         arr = matrix(fib, arr);
-        if(n==1){
+        if (n == 1) {
             System.out.println(1);
         }
 
@@ -58,7 +58,7 @@ public class FibbonacciSnake {
                 arr[down][i] = fib[cnt--];
             }
             down--;
-            for (int i = down; i >=up && left <= right; i--) {
+            for (int i = down; i >= up && left <= right; i--) {
                 arr[i][left] = fib[cnt--];
             }
             left++;

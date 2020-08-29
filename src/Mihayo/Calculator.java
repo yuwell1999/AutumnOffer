@@ -47,8 +47,8 @@ public class Calculator {
         if (upperNum == 0) {
             System.out.println(0);
         }
-        if (upperNum%divid== 0) {
-            System.out.println(upperNum/divid);
+        if (upperNum % divid == 0) {
+            System.out.println(upperNum / divid);
         } else {
             //System.out.println(upperNum + "    " + divid);
             if (divid < 0 || upperNum < 0) {

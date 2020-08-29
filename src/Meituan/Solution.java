@@ -1,29 +1,29 @@
 package Meituan;
 
-import java.util.*;
-import java.util.Set;
+import java.util.Arrays;
 import java.util.HashSet;
-import java.lang.Math;
+import java.util.Set;
 
 
 public class Solution {
     /**
      * return the max length of the subarray
+     *
      * @param arr int整型一维数组 the array
      * @return int整型
      */
-    public static int maxSubarrayCanbeMerged (int[] arr) {
+    public static int maxSubarrayCanbeMerged(int[] arr) {
         // write code here
         Set<Integer> hs = new HashSet<>();
-        for (Integer i:arr){
+        for (Integer i : arr) {
             hs.add(i);
         }
 
-        int []arr1 = new int[hs.size()];
+        int[] arr1 = new int[hs.size()];
 
         // 把set放进arr1中
-        int j =0;
-        for(Integer ii : hs){
+        int j = 0;
+        for (Integer ii : hs) {
             arr1[j] = ii;
             j++;
         }
@@ -31,12 +31,12 @@ public class Solution {
         Arrays.sort(arr1);
         int cnt = 1;
         int tmp = 1;
-        for(int i=0;i<arr1.length-1;i++){
+        for (int i = 0; i < arr1.length - 1; i++) {
 
-            if(arr1[i+1]-arr1[i]==1){
+            if (arr1[i + 1] - arr1[i] == 1) {
                 //cnt++;
-                tmp ++;
-            }else{
+                tmp++;
+            } else {
                 //tmp = 0;
                 //cnt = 0;
 
@@ -44,15 +44,15 @@ public class Solution {
                 tmp = 1;
 
             }
-            cnt = Math.max(cnt,tmp);
+            cnt = Math.max(cnt, tmp);
         }
 
 
         return cnt;
     }
 
-    public static void main(String[] args){
-        int[] arr = new int[]{5,5,3,2,6,4,3};
+    public static void main(String[] args) {
+        int[] arr = new int[]{5, 5, 3, 2, 6, 4, 3};
         System.out.println(Solution.maxSubarrayCanbeMerged(arr));
     }
 }
