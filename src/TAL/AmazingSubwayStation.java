@@ -28,9 +28,6 @@ public class AmazingSubwayStation {
 //
 //            }
         }
-        if (one == sum) {
-            System.out.println(cnt);
-
-        } else System.out.println(cnt);
+        System.out.println(cnt);
     }
 }
